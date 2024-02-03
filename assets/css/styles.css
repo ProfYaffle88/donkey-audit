@@ -1,3 +1,113 @@
+/* Wildcard!*/
 * {
     border: 1px black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none; 
+}
+
+/* Title */
+
+.title {
+    font-size: 110%;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+/* Navbar styles with dropdown toggle */
+
+#menu {
+    font-size: 110%;
+    letter-spacing: 2px;
+    list-style-type: none;
+}
+
+#menu > li {
+    margin-bottom: 1em;
+}
+
+.active {
+    border-bottom: 1px solid greenyellow;
+}
+
+nav {
+    position: absolute;
+    justify-content: flex-end;
+    color: #000;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px green;
+    display: none;
+    top: 100%;
+}
+
+.nav-bar {
+    background-color: grey;
+    min-width: 100%;
+    min-height: 5%;
+    position: fixed; bottom: 0;
+    
+}
+
+.head-nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: grey;
+}
+
+.head-nav a {
+    color: #000;
+}
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+    display: flex;
+}
+
+#nav-toggle {
+    display: none;
+    list-style-type: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
+}
+
+
+/* Media Queries */
+
+/* ---- Tablets ------ */
+@media (min-width:768px) {
+    /*Header and Navbar*/
+    nav {
+        display: flex;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    #menu {
+        display: flex;
+    }
+
+    #menu > li {
+        padding-left: 1rem;
+        justify-content: flex-end;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+}
+
+/* ---- Desktop ------ */
+@media (min-width:1024px) {
+    
+    
+
 }
