@@ -3,6 +3,7 @@
 
 /* Wildcard!*/
 * {
+    font-family: 'Fraunces', sans-serif;
     border: 1px black;
     margin: 0;
     padding: 0;
@@ -13,10 +14,8 @@
 
 /* Title */
 
-.title {
-    font-size: 110%;
-    letter-spacing: 2px;
-    text-decoration: none;
+.title-livery img {
+    max-width: 33%;
 }
 
 /* Navbar styles with dropdown toggle */
@@ -51,7 +50,7 @@ nav {
     background-color: grey;
     min-width: 100%;
     min-height: 5%;
-    position: fixed; bottom: 0;
+    position: fixed; top: 0;
     
 }
 
