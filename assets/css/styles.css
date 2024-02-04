@@ -91,7 +91,6 @@ header, footer {
     background-color: #fff;
     color: #000;
     padding: 10px;
-    text-align: center;
 }
 
 main {
@@ -113,7 +112,7 @@ main {
     /*Header and Navbar*/
     nav {
         display: flex;
-        position: relative;
+        position: absolute;
         box-shadow: none;
         width: fit-content;
         padding-right: 1rem;
