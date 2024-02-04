@@ -2,19 +2,32 @@
 
 A personal project to practice the handling of APIs. Use the publically available UK parliament API to return data regarding specific MPs through a static web page.
 
-## Inspiration
+# Inspiration
 
-- Led by Donkeys are a fantastic organisation that deserve far more attention and influence than they receive.
+- [Led by Donkeys]() are a fantastic organisation that deserve far more attention and influence than they receive. I beleive in greater transparency and accountability for elected officals and Governments. I fell that the imagined product would not be out of place as part of a similar instituition's website.
+- Similar sites/services exist, such as [TheyWorkForYou]() and the [UK Parliament site](), but are they difficult to use and not well known.
+- I would like to produce a very simple website which displays multiple items from the [UK Parliament Member API]() for a specified MP.
+- This information would be presented clearly with a short section on how to critically appraise the information.
 
+#
+# Outline
 
-You can view the deployed website [here](placeholder for GitHub Pages deployment)
+- Return information on MPs based on a search.
+    - MP name (this can be handled with the API)
+    - Post Code (this may require an additional step to convert postcode to constituencyId for the API)
 
+- Present the returned information clearly, with an about page that will assist the user with how to interpret the information and clearly state the owner/developer of this site along with their intention.
+
+- Simple Aesthetic = Newspaper.
+
+#
 
 /*Placeholder - site displayed on multiple devices*/
 <p align="center">
 <img src="assets\images\livery-large.PNG" width="600" height="100%">
 </p>
 
+You can view the deployed website [here](https://github.com/ProfYaffle88/donkey-audit).
 
 #
 # UX
