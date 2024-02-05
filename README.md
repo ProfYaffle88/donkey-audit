@@ -229,14 +229,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 <img src="#" width="600" height="100%">
 </p>
 
-
-4. As a new user of this website, 
-
-<p align="center">
-<img src="#" width="600" height="100%">
-</p>
-  
-
 ## Bugs and Issues
 
 - TBC
