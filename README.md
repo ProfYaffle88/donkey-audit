@@ -4,9 +4,9 @@ A personal project to practice the handling of APIs. Use the publically availabl
 
 # Inspiration
 
-- [Led by Donkeys]() are a fantastic organisation that deserve far more attention and influence than they receive. I beleive in greater transparency and accountability for elected officals and Governments. I fell that the imagined product would not be out of place as part of a similar instituition's website.
-- Similar sites/services exist, such as [TheyWorkForYou]() and the [UK Parliament site](), but are they difficult to use and not well known.
-- I would like to produce a very simple website which displays multiple items from the [UK Parliament Member API]() for a specified MP.
+- [Led by Donkeys](https://www.youtube.com/c/LedByDonkeys) are a fantastic organisation that deserve far more attention and influence than they receive. I passionately believe in greater transparency and accountability for elected officals and Governments. I feel that the imagined product would not be out of place as part of a similar instituition's website.
+- Similar sites/services exist, such as [TheyWorkForYou](https://www.theyworkforyou.com/) and the [UK Parliament site "Find Your MP" service](https://members.parliament.uk/FindYourMP), but are they difficult to use, could present the data more clearly (in my opinion) and are not well known.
+- I would like to produce a very simple website which displays multiple items from the [UK Parliament Member API](https://members-api.parliament.uk/index.html) for a specified MP.
 - This information would be presented clearly with a short section on how to critically appraise the information.
 
 #
@@ -332,7 +332,8 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 
 ## Content
 
-- All content was written by [ProfYaffle88](https://github.com/users/ProfYaffle88)
+- Contains Parliamentary information licensed under the Open Parliament Licence v3.0. Provided through the [UK Parliament Members API](https://members-api.parliament.uk/index.html)
+- All code was written by [ProfYaffle88](https://github.com/users/ProfYaffle88)
 - The format of this ReadMe.md was adapted from a docoument by [Iris Smok](https://github.com/Iris-Smok)
 - The header, footer and navbar were adapted from 
 - Stack Overflow provided several solutions to multiple issues including alignment, positioning, and responsiveness. [Stack Overflow](https://stackoverflow.com/questions)
