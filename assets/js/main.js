@@ -6,7 +6,7 @@ const API_SEARCH = "/api/Members/Search"
  async function selectMp() {
     // let searchName = new FormData(document.getElementById("checksform"));
     let searchName = "Jacob Rees Mogg"
-    const searchString = `${API_URL}${API_SEARCH}`
+    const searchString = `${API_URL}${API_SEARCH}/${searchName}`
     const response = await fetch(searchString);
     const data = await response.json();
 
