@@ -79,38 +79,38 @@ Newspaper
 
 ### _Mobile View - Home Page_
 
-<p align="center">
-<img src="#" width="400" height="1000">
-</p>
-
-### _Mobile View - About_
-
-<p align="center">
-<img src="#" width="400" height="1000">
-</p>
-
-### _Mobile View - Contact_
-
-<p align="center">
-<img src="#" width="400" height="1000">
-</p>
-
 ### _Home Page_ 
 
 <p align="center">
-<img src="#" width="600" height="700">
+<img src="assets\images\wireframes\desktop-search.png" width="1000px" height="528px">
+</p>
+
+### _Results_
+
+<p align="center">
+<img src="assets\images\wireframes\desktop-results.png" width="1000px" height="528px">
 </p>
 
 ### _About_
 
 <p align="center">
-<img src="#" width="600" height="900">
+<img src="assets\images\wireframes\desktop-about.png" width="1000px" height="528px">
 </p>
 
-### _Contact_
+<p align="center">
+<img src="assets\images\wireframes\mobile-search.png" width="500px" height="994px">
+</p>
+
+### _Mobile View - Results_
 
 <p align="center">
-<img src="#" width="600" height="900">
+<img src="assets\images\wireframes\mobile-results.png" width="500px" height="994px">
+</p>
+
+### _Mobile View - About_
+
+<p align="center">
+<img src="assets\images\wireframes\mobile-about.png" width="500px" height="994px">
 </p>
 
 <hr>
