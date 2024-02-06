@@ -81,8 +81,6 @@ Newspaper
 
 # Wireframes
 
-### _Mobile View - Home Page_
-
 ### _Home Page_ 
 
 <p align="center">
@@ -100,6 +98,8 @@ Newspaper
 <p align="center">
 <img src="assets\images\wireframes\desktop-about.png" width="1000px" height="528px">
 </p>
+
+### _Mobile View - Home Page_
 
 <p align="center">
 <img src="assets\images\wireframes\mobile-search.png" width="500px" height="994px">
@@ -123,7 +123,7 @@ Newspaper
 
 **Design**
 - Newspaper Aesthetic
-- - Simple greyscale/black and white/off-white colour palette
+    - Simple greyscale/black and white/off-white colour palette
 
 **Chosen Colour Palette**
 - Used #FFF and #000 for black and white
@@ -153,7 +153,7 @@ Newspaper
 
 - [Font Awesome](https://fontawesome.com/) - was used for the site icons.
 
-- [Boostrap](https://getbootstrap.com/) - was used to assist styling.
+- [Bootstrap](https://getbootstrap.com/) - was used to assist styling.
 
 - [Github](https://github.com/ProfYaffle88) - was used to store the project code.
 
