@@ -121,21 +121,21 @@ Newspaper
 
 # Surface
 
-## Design
+**Design**
 - Newspaper Aesthetic
 - - Simple greyscale/black and white/off-white colour palette
 
-## Chosen Colour Palette 
+**Chosen Colour Palette**
 - Used #FFF and #000 for black and white
 
-## Fonts 
+**Fonts**
 - Imported Fraunces font (Google Fonts)
 
 
-## Media
+**Media**
 - Used a paper-effect background image
 
-**Newspaper Livery** 
+**Newspaper Livery**
 - A parody Newspaper livery was created by me using [Canva.com](www.canva.com)
 
 <hr>
