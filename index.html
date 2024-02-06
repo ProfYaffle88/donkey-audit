@@ -25,10 +25,18 @@
 
     <main>
         <section class="content">
-            <Form>
-                <!-- Search Area -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quod dolores velit itaque sint temporibus. Cumque harum veritatis sapiente deleniti aliquam asperiores esse. Possimus minima, error ab temporibus blanditiis iure.</p>
-            </Form>
+            <form>
+                <div class="mb-3">
+                  <label for="searchMpName" class="form-label">Search by MP Name:</label>
+                  <input type="text" class="form-control" id="searchMpName">
+                </div>
+                <div class="mb-3">
+                  <label for="searchPostcode" class="form-label">Search by Constituency Postcodes:</label>
+                  <input type="text" class="form-control" id="searchPostcode" aria-describedby="postcodeHelp">
+                  <div id="postcodeHelp" class="form-text">We'll never share your postcode with anyone else.</div>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+              </form>
         </section>
     </main>
 
