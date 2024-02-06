@@ -309,7 +309,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 <p align="center">
 <img src="#" width="600" height="100%">
 </p>
-
+ -->
 
 # Deployment
 
@@ -337,4 +337,4 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 
 ## Acknowledgements
 
-- Thanks to w3 Schools, Stack Overflow, Code Institute and above all the holy trinity of instructors; Iris, Martin and Kevin. -->
+- Thanks to w3 Schools, Stack Overflow, Code Institute and above all the holy trinity of instructors; Iris, Martin and Kevin.
