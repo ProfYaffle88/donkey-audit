@@ -2,6 +2,8 @@
 
 A personal project to practice the handling of APIs. Use the publically available UK parliament API to return data regarding specific MPs through a static web page.
 
+<hr>
+
 # Inspiration
 
 - [Led by Donkeys](https://www.youtube.com/c/LedByDonkeys) are a fantastic organisation that deserve far more attention and influence than they receive. I passionately believe in greater transparency and accountability for elected officals and Governments. I feel that the imagined product would not be out of place as part of a similar instituition's website.
@@ -13,8 +15,6 @@ A personal project to practice the handling of APIs. Use the publically availabl
 # Outline
 
 - Return information on MPs based on a search.
-    - MP name (this can be handled with the API)
-    - Post Code (this may require an additional step to convert postcode to constituencyId for the API)
 
 - Present the returned information clearly, with an about page that will assist the user with how to interpret the information and clearly state the owner/developer of this site along with their intention.
 
@@ -29,6 +29,7 @@ A personal project to practice the handling of APIs. Use the publically availabl
 
 You can view the deployed website [here](https://github.com/ProfYaffle88/donkey-audit).
 
+<hr>
 #
 # UX
 
@@ -38,7 +39,9 @@ Newspaper
 
 ## Users Stories 
 
-- As a new user of this website, 
+- As a new user of this website, I want to be able to quickly and simply access an MPs most relevant records.
+- As a new user of this website, I want data to presented in a clear, unbiased and digestible fashion.
+- As a new user of this website, I want it to be clear who made this, and why they made it.
 
 
 #
@@ -46,100 +49,96 @@ Newspaper
 
 ## Features
 
-- 
+- Search parliament records by MP name (this can be handled with the API search query parameter to return an id for a specific MP) 
 
 
 ### Future Features
 
-- 
+- Postcode search returning MP for that postcode (this may require several additional steps to convert postcode to constituencyId, constituencyId to mpId)
+- ONS data for constituency postcodes is available as a .csv file from the ONS website.
 
 #
 # Structure (TBC)
 
 - **Header**  
-    - Newspaper livery positioned left, navigation bar on the right
+    - Newspaper livery positioned left, About-page link on the right
     - Appears on every page
 
 - **Home Page**
-    - 
+    - Search form with submit button
+    - Updates page to display retrieved interesting MP data
+    - 'Search Again' button to reset page to initial state.
 
 - **About** 
-    - 
+    - Explains displayed data and how to interpret it
+    - Call to action to participate in government by writing to your MP/Voting
+    - Clear statement of transparency on my behalf
 
 - **Footer**
-    - Appears on every page with link to contact page and any/all social media links    
+    - Appears on every page with required attributions and any/all social media links 
 
+<hr>
 
-<!-- # Wireframes
+# Wireframes
 
 ### _Mobile View - Home Page_
-
-<p align="center">
-<img src="#" width="400" height="1000">
-</p>
-
-### _Mobile View - About_
-
-<p align="center">
-<img src="#" width="400" height="1000">
-</p>
-
-### _Mobile View - Contact_
-
-<p align="center">
-<img src="#" width="400" height="1000">
-</p>
 
 ### _Home Page_ 
 
 <p align="center">
-<img src="#" width="600" height="700">
+<img src="assets\images\wireframes\desktop-search.png" width="1000px" height="528px">
+</p>
+
+### _Results_
+
+<p align="center">
+<img src="assets\images\wireframes\desktop-results.png" width="1000px" height="528px">
 </p>
 
 ### _About_
 
 <p align="center">
-<img src="#" width="600" height="900">
+<img src="assets\images\wireframes\desktop-about.png" width="1000px" height="528px">
 </p>
 
-### _Contact_
+<p align="center">
+<img src="assets\images\wireframes\mobile-search.png" width="500px" height="994px">
+</p>
+
+### _Mobile View - Results_
 
 <p align="center">
-<img src="#" width="600" height="900">
+<img src="assets\images\wireframes\mobile-results.png" width="500px" height="994px">
+</p>
+
+### _Mobile View - About_
+
+<p align="center">
+<img src="assets\images\wireframes\mobile-about.png" width="500px" height="994px">
 </p>
 
 <hr>
 
 # Surface
 
-## Design 
+**Design**
+- Newspaper Aesthetic
+- - Simple greyscale/black and white/off-white colour palette
+
+**Chosen Colour Palette**
+- Used #FFF and #000 for black and white
+
+**Fonts**
+- Imported Fraunces font (Google Fonts)
 
 
-## Chosen Colour Palette 
--
--
--
--
--
--
+**Media**
+- Used a paper-effect background image
 
-## Fonts 
+**Newspaper Livery**
+- A parody Newspaper livery was created by me using [Canva.com](www.canva.com)
 
--
--
--
-
-
-## Media
-
-**Hero image** - 
-
-**About Me** - 
-
-**Gallery** - 
-
-**Contact** - 
-
+<hr>
 
 # Technologies Used
 
@@ -156,15 +155,15 @@ Newspaper
 
 - [Boostrap](https://getbootstrap.com/) - was used to assist styling.
 
-- [Github](https://github.com/IrisSmok) - was used to store the project code.
+- [Github](https://github.com/ProfYaffle88) - was used to store the project code.
 
 - [Balsamiq](https://balsamiq.com/) - was used to create site wireframes.
 
-- [Am I Responsive](http://ami.responsivedesign.is/) - to check if the site is responsive on different screen sizes.
+- [UK Parliament member API](https://members-api.parliament.uk/index.html) - provided all information licensed under the Open Parliament Licence v3.0. 
 
-- /*[IMG2GO](https://www.img2go.com/compress-image#j=f26cc008-23b4-4d4e-9934-96877fa9a7e7) and [Tiny PNG](https://tinypng.com/) - these sites were used to help me compress the images*/
+<!-- - [Am I Responsive](http://ami.responsivedesign.is/) - to check if the site is responsive on different screen sizes.
 
-- /*[Free Online HTML Formatter](https://www.freeformatter.com/html-formatter.html) - was used to correct indentation issues and get rid of too much whitespace*/
+- [Free Online HTML Formatter](https://www.freeformatter.com/html-formatter.html) - was used to correct indentation issues and get rid of too much whitespace
 
 # Testing
 - Tested on . . . version browsers
@@ -227,14 +226,6 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 <p align="center">
 <img src="#" width="600" height="100%">
 </p>
-
-
-4. As a new user of this website, 
-
-<p align="center">
-<img src="#" width="600" height="100%">
-</p>
-  
 
 ## Bugs and Issues
 
@@ -318,7 +309,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 <p align="center">
 <img src="#" width="600" height="100%">
 </p>
-
+ -->
 
 # Deployment
 
@@ -346,4 +337,4 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 
 ## Acknowledgements
 
-- Thanks to w3 Schools, Stack Overflow, Code Institute and above all the holy trinity of instructors; Iris, Martin and Kevin. -->
+- Thanks to w3 Schools, Stack Overflow, Code Institute and above all the holy trinity of instructors; Iris, Martin and Kevin.
