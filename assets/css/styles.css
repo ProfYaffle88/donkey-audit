@@ -44,9 +44,9 @@ header, footer {
     padding: 10px;
 }
 
-header {
+/* header {
 
-}
+} */
 
 footer {
     font-size: 0.6em;
@@ -63,6 +63,15 @@ main {
     flex: 1;
     padding: 20px;
 }
+
+/* About Section */
+.how-to li {
+    list-style: disc;
+}
+
+/* .how-to h1, .how-to h2 {
+    font-weight: 700;
+} */
 
 
 /* Media Queries */
