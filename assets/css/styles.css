@@ -27,6 +27,16 @@
     color: #000;
 }
 
+.title-search-again {
+    position: absolute;
+    right: 80px;
+    /* justify-self: flex-end; */
+    align-self: center;
+    font-family: 'Fraunces', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
 /* Basic Page Layout */
 body {
     margin: 0;
