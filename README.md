@@ -2,6 +2,8 @@
 
 A personal project to practice the handling of APIs. Use the publically available UK parliament API to return data regarding specific MPs through a static web page.
 
+<hr>
+
 # Inspiration
 
 - [Led by Donkeys](https://www.youtube.com/c/LedByDonkeys) are a fantastic organisation that deserve far more attention and influence than they receive. I passionately believe in greater transparency and accountability for elected officals and Governments. I feel that the imagined product would not be out of place as part of a similar instituition's website.
@@ -27,6 +29,7 @@ A personal project to practice the handling of APIs. Use the publically availabl
 
 You can view the deployed website [here](https://github.com/ProfYaffle88/donkey-audit).
 
+<hr>
 #
 # UX
 
@@ -74,6 +77,7 @@ Newspaper
 - **Footer**
     - Appears on every page with required attributions and any/all social media links 
 
+<hr>
 
 # Wireframes
 
@@ -117,30 +121,24 @@ Newspaper
 
 # Surface
 
-## Design 
-
+## Design
+- Newspaper Aesthetic
+- - Simple greyscale/black and white/off-white colour palette
 
 ## Chosen Colour Palette 
--
--
--
--
--
--
+- Used #FFF and #000 for black and white
 
 ## Fonts 
-
--
--
--
+- Imported Fraunces font (Google Fonts)
 
 
 ## Media
+- Used a paper-effect background image
 
-**Hero image** - 
+**Newspaper Livery** 
+- A parody Newspaper livery was created by me using [Canva.com](www.canva.com)
 
-**About** -  
-
+<hr>
 
 # Technologies Used
 
