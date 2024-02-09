@@ -25,20 +25,22 @@
 
     <main>
         <section class="content">
-            <form>
-                <div class="mb-3">
-                  <label for="searchMpName" class="form-label">Search by MP Name:</label>
-                  <input type="text" class="form-control" id="searchMpName">
+            <div class="mb-3">
+                <label for="searchMpName" class="form-label">Search by MP Name:</label>
+                <div class="dropdown">
+                    <input type="text" class="form-control" id="searchMpNameInput" oninput="searchMpName()" placeholder="Type to search...">
+                    <div id="searchMpNameDropdown" class="dropdown-content"></div>
                 </div>
-                <div class="mb-3">
-                  <label for="searchPostcode" class="form-label">Search by Constituency Postcodes:</label>
-                  <input type="text" class="form-control" id="searchPostcode" aria-describedby="postcodeHelp">
-                  <div id="postcodeHelp" class="form-text">We'll never share your postcode with anyone else.</div>
-                </div>
-                <button type="submit" class="btn btn-dark">Submit</button>
-              </form>
+            </div>
+            <div class="mb-3">
+                <label for="searchPostcode" class="form-label">Search by Constituency Postcodes:</label>
+                <input type="text" class="form-control" id="searchPostcode" aria-describedby="postcodeHelp">
+                <div id="postcodeHelp" class="form-text">We'll never share your postcode with anyone else.</div>
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
         </section>
     </main>
+    
 
     <footer class="mt-auto footer">
         <p>Contains Parliamentary information licensed under the Open Parliament Licence v3.0. Provided through the <a href="https://members-api.parliament.uk/index.html">UK Parliament Members API</a>.</p>
