@@ -316,7 +316,7 @@ The W3C Markup Validator and W3C CSS Validator Services were used to check my co
 ## GitHub Pages
 1. GitHub Pages was used to deploy the site.
 2. The site was deployed early for the purposes of testing.
-3. The latest deployed version can be seen [here](https://profyaffle88.github.io/donkey-audit/)
+3. The latest deployed version can be seen [here]([https://profyaffle88.github.io/donkey-audit/](https://profyaffle88.github.io/donkey-audit/))
 
 
 # Credits
