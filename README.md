@@ -27,7 +27,7 @@ A personal project to practice the handling of APIs. Use the publically availabl
 <img src="assets\images\livery-large.PNG" width="600" height="100%">
 </p>
 
-You can view the deployed website [here](https://github.com/ProfYaffle88/donkey-audit).
+You can view the deployed website [here]([https://github.com/ProfYaffle88/donkey-audit](https://profyaffle88.github.io/donkey-audit/)).
 
 <hr>
 #
