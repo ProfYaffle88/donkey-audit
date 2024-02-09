@@ -55,7 +55,34 @@ async function searchMpName() {
 }
 
 
-/* Display MP data */
-function displayData() {
+// Function to display MP data in the main content section
+function displayData(mpData) {
+    // Hide all current elements in the main content section
+    const contentSections = document.querySelectorAll('main .content');
+    contentSections.forEach(section => {
+        section.style.display = 'none';
+    });
 
+    // Create a new section for displaying MP data
+    const mpSection = document.createElement('section');
+    mpSection.className = 'content';
+
+    // Create elements to display MP data
+    const mpNameElement = document.createElement('h2');
+    mpNameElement.textContent = mpData.value.nameListAs;
+
+    const mpPortraitElement = document.createElement('img');
+    mpPortraitElement.src = mpData.value.thumbnailUrl;
+    mpPortraitElement.alt = "MP Portrait";
+
+    // Assuming mpBio, mpContactInfo, mpRegisterOfInterests, votingRecord, and lastElectionResult
+    // are properties of mpData, you can create corresponding elements for each of them
+
+    // Append elements to the MP section
+    mpSection.appendChild(mpNameElement);
+    mpSection.appendChild(mpPortraitElement);
+    // Append more elements as needed
+
+    // Append the MP section to the main content
+    document.querySelector('main').appendChild(mpSection);
 }
