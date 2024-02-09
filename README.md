@@ -24,7 +24,7 @@ A personal project to practice the handling of APIs. Use the publically availabl
 
 /*Placeholder - site displayed on multiple devices*/
 <p align="center">
-<img src="assets\images\livery-large.PNG" width="600" height="100%">
+<img src="assets\images\livery-2.PNG" width="600" height="100%">
 </p>
 
 You can view the deployed website [here](https://github.com/ProfYaffle88/donkey-audit).
