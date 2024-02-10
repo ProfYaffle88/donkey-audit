@@ -70,10 +70,12 @@ function displayData(mpData) {
     // Create elements to display MP data
     const mpNameElement = document.createElement('h2');
     mpNameElement.textContent = mpData.value.nameListAs;
+    console.log(mpNameElement.textContent);
 
     const mpPortraitElement = document.createElement('img');
     mpPortraitElement.src = mpData.value.thumbnailUrl;
     mpPortraitElement.alt = "MP Portrait";
+    console.log(mpPortraitElement.src);
 
     // Assuming mpBio, mpContactInfo, mpRegisterOfInterests, votingRecord, and lastElectionResult
     // are properties of mpData, you can create corresponding elements for each of them
