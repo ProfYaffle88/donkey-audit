@@ -59,11 +59,11 @@ async function searchMpName() {
 async function handleSubmit() {
     // Selected Name
     const selectedMpOption = document.querySelector("#searchMpNameDropdown .selected");
-    const selectedMpName = selectedMpOption ? selectedMpOption.innerText : "";
+    const selectedMpName = selectedMpOption ? selectedMpOption.innerText.trim() : "";
     console.log(selectedMpName);
 
     // Check if an MP name is selected
-    if (selectedMpName.trim() === "") {
+    if (!selectedMpName || selectedMpName === '') {
         // Highlight the dropdown input element briefly
         const searchMpNameInput = document.getElementById("searchMpNameInput");
         searchMpNameInput.classList.add("is-invalid");
