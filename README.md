@@ -161,7 +161,7 @@ Newspaper
 
 - [Balsamiq](https://balsamiq.com/) - was used to create site wireframes.
 
-- [UK Parliament member API](https://members-api.parliament.uk/index.html) - provided all information licensed under the Open Parliament Licence v3.0. 
+- [UK Parliament member API](https://members-api.parliament.uk/index.html) - provided all information, licensed under the Open Parliament Licence v3.0. 
 
 <!-- - [Am I Responsive](http://ami.responsivedesign.is/) - to check if the site is responsive on different screen sizes.
 
