@@ -116,21 +116,29 @@ main {
 
 /* ---- Tablets ------ */
 @media (min-width:768px) {
-
+    .content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+        gap: 20px; /* Gap between columns */
+    }
 }
+
 
 /* ---- Desktop ------ */
 @media (min-width:1024px) {
+    .content {
+        gap: 50px;
+    }
     .title-livery img {
         max-height: 20em;
     }
     .title-about {
         max-width: fit-content;
-        right: 100px;
+        right: 64px;
     }
     .title-about {
         max-width: fit-content;
-        right: 180px;
+        right: 192px;
     }
     
 }
