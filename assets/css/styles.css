@@ -25,17 +25,15 @@
 .title-about {
     position: absolute;
     right: 10px;
-    /* justify-self: flex-end; */
     align-self: center;
     font-family: 'Fraunces', sans-serif;
     text-decoration: none;
     color: #000;
 }
 
-.title-search-again {
+.title-again {
     position: absolute;
     right: 80px;
-    /* justify-self: flex-end; */
     align-self: center;
     font-family: 'Fraunces', sans-serif;
     text-decoration: none;

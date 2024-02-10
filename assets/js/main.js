@@ -193,6 +193,8 @@ async function fullMpDataByName(selectedMpName) {
 
 // Function to display MP data in the main content section
 function displayData(mpInfo) {
+    // Remove hide from search again button
+    document.getElementById('search-again').classList.remove('hide');
     // Hide all current elements in the main content section
     const contentSections = document.querySelectorAll('main .content');
     contentSections.forEach(section => {
