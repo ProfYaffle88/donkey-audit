@@ -2,6 +2,7 @@
 const API_URL = "https://members-api.parliament.uk";
 const API_SEARCH = "/api/Members/Search";
 const API_MEMBERS = "/api/Members"
+let mpData;
 
 // Function to update the dropdown with MP names from HTML collection
 function updateMpNameDropdown(data) {
@@ -69,7 +70,7 @@ async function handleSubmit() {
     // Fetch additional data based on the selected MP name
     try {
         // Fetch MP data by name
-        const mpData = await fullMpDataByName(selectedMpName);
+        mpData = await fullMpDataByName(selectedMpName);
         // Display the MP data
         displayData(mpData);
     } catch (error) {
@@ -86,7 +87,7 @@ async function fullMpDataByName(selectedMpName) {
 
     if (response.ok) {
         // Assuming we return the first MP data if multiple results are returned
-        const mpData = data.items[0];
+        mpData = data.items[0];
         // Extract relevant data and store in a new object
         const mpInfo = {
             id: mpData.value.id,
@@ -174,7 +175,7 @@ async function fullMpDataByName(selectedMpName) {
 }
 
 // Function to display MP data in the main content section
-function displayData(mpData) {
+function displayData(mpInfo) {
     // Hide all current elements in the main content section
     const contentSections = document.querySelectorAll('main .content');
     contentSections.forEach(section => {
@@ -187,11 +188,11 @@ function displayData(mpData) {
 
     // Create elements to display MP data
     const mpNameElement = document.createElement('h2');
-    mpNameElement.textContent = mpData.value.nameListAs;
+    mpNameElement.textContent = mpInfo.value.nameListAs;
     console.log(mpNameElement.textContent);
 
     const mpPortraitElement = document.createElement('img');
-    mpPortraitElement.src = mpData.value.thumbnailUrl;
+    mpPortraitElement.src = mpInfo.value.thumbnailUrl;
     mpPortraitElement.alt = "MP Portrait";
     console.log(mpPortraitElement.src);
 
