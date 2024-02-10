@@ -33,7 +33,6 @@ function updateMpNameDropdown(data) {
             document.getElementById("searchMpNameInput").value = name;
             // Hide the dropdown
             dropdownContainer.style.display = "none";
-           
         };
 
         // Append the option to the dropdown container
