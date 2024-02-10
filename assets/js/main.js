@@ -21,6 +21,14 @@ function updateMpNameDropdown(data) {
         const option = document.createElement("a");
         option.textContent = name;
         option.onclick = () => {
+            // Remove the .selected class from previously selected options
+            const selectedOption = dropdownContainer.querySelector(".selected");
+            if (selectedOption) {
+                selectedOption.classList.remove("selected");
+            }
+            // Add the .selected class to the clicked option
+            option.classList.add("selected");
+
             // When the user clicks on an option, fill the input with the selected name
             document.getElementById("searchMpNameInput").value = name;
             // Hide the dropdown
