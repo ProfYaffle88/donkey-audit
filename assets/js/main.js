@@ -59,6 +59,7 @@ async function searchMpName() {
 async function handleSubmit() {
     // Selected Name
     const selectedMpOption = document.querySelector("#searchMpNameDropdown .selected");
+    console.log(selectedMpOption);
     const selectedMpName = selectedMpOption ? selectedMpOption.innerText.trim() : "";
     console.log(selectedMpName);
 
