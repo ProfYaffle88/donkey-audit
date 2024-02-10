@@ -205,11 +205,11 @@ function displayData(mpInfo) {
 
     // Create elements to display MP data
     const mpNameElement = document.createElement('h2');
-    mpNameElement.textContent = mpInfo.value.nameListAs;
+    mpNameElement.textContent = mpInfo.value.name;
     console.log(mpNameElement.textContent);
 
     const mpPortraitElement = document.createElement('img');
-    mpPortraitElement.src = mpInfo.value.thumbnailUrl;
+    mpPortraitElement.src = mpInfo.value.portrait;
     mpPortraitElement.alt = "MP Portrait";
     console.log(mpPortraitElement.src);
 
