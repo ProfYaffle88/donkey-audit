@@ -44,7 +44,7 @@ async function searchMpName() {
         return;
     }
 
-    const searchString = `${API_URL}${API_SEARCH}?Name=${searchTerm}&skip=0&take=20`;
+    const searchString = `${API_URL}${API_SEARCH}?Name=${searchTerm}&skip=0&take=15`;
     const response = await fetch(searchString);
     const data = await response.json();
 
