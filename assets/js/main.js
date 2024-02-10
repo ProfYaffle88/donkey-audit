@@ -78,7 +78,7 @@ async function handleSubmit() {
 }
 
 // Function to fetch MP data by name
-async function fetchMpDataByName(mpName) {
+async function fullMpDataByName(mpName) {
     const searchString = `${API_URL}${API_SEARCH}?Name=${mpName}`;
     const response = await fetch(searchString);
     let data = await response.json();
