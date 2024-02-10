@@ -205,3 +205,11 @@ function displayData(mpData) {
     // Append the MP section to the main content
     document.querySelector('main').appendChild(mpSection);
 }
+
+/* EVENT LISTENERS */
+
+// Eventvent listener to the submit button
+document.querySelector(".submit").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    handleSubmit(); // Call the handleSubmit function
+});
