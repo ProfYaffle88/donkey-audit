@@ -107,7 +107,7 @@ async function fullMpDataByName(selectedMpName) {
         // Extract relevant data and store in a new object
         const mpInfo = {
             id: mpData.id,
-            name: mpData.nameDisplayAs,
+            name: mpData.nameListAs,
             portrait: mpData.thumbnailUrl
             // Add more key-value pairs as needed
         };
