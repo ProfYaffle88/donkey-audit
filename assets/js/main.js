@@ -144,12 +144,9 @@ async function fullMpDataByName(selectedMpName) {
                 throw new Error(interestsData.error);
             }
 
-            /* Here be Dragons -
-
-            Voting has an additional required parameter
-            Latest Election Result requires some data handling to display later on
-
-            // [https://members-api.parliament.uk/api/Members/4099/Voting?house=1 or 2] ... depending if in governemnt or not needs a check to work!
+            // Voting has an additional required parameter
+            
+            // [https://members-api.parliament.uk/api/Members/4099/Voting?house=1 or 2] ... depending if in commons or lords - as it stands, only works for commons MPs, need to add somesothing for lords!
             searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/Voting?house=1`;
             const votingResponse = await fetch(searchString);
             const votingData = await response.json();
@@ -159,6 +156,8 @@ async function fullMpDataByName(selectedMpName) {
             } else {
                 throw new Error(data.error);
             }
+            
+            // Latest Election Result requires some data handling to display later on
 
             searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/LatestElectionResult`;
             const elecResResponse = await fetch(searchString);
@@ -177,7 +176,6 @@ async function fullMpDataByName(selectedMpName) {
                 throw new Error(data.error);
             }
 
-            */
             
         } catch (error) {
             console.error("Error fetching additional MP data:", error);
@@ -215,12 +213,34 @@ function displayData(mpInfo) {
     mpPortraitElement.alt = "MP Portrait";
     console.log(mpPortraitElement.src);
 
-    // Assuming mpBio, mpContactInfo, mpRegisterOfInterests, votingRecord, and lastElectionResult
-    // are properties of mpData, you can create corresponding elements for each of them
+    // Additional data
+    const mpSynopsisElement = document.createElement('p');
+    mpSynopsisElement.textContent = mpInfo.synopsis;
 
+    // Display contact information
+    const mpContactInfoElement = document.createElement('p');
+    mpContactInfoElement.textContent = "Contact Information:";
+    mpInfo.contactInfo.forEach(contact => {
+        const contactDetail = document.createElement('p');
+        contactDetail.textContent = `${contact.type}: ${contact.address}`;
+        mpContactInfoElement.appendChild(contactDetail);
+    });
+
+    // Display registered interests
+    const mpRegisteredInterestsElement = document.createElement('p');
+    mpRegisteredInterestsElement.textContent = "Registered Interests:";
+    mpInfo.registeredInterests.forEach(interest => {
+        const interestDetail = document.createElement('p');
+        interestDetail.textContent = interest;
+        mpRegisteredInterestsElement.appendChild(interestDetail);
+    });
+    
     // Append elements to the MP section
     mpSection.appendChild(mpNameElement);
     mpSection.appendChild(mpPortraitElement);
+    mpSection.appendChild(mpSynopsisElement);
+    mpSection.appendChild(mpContactInfoElement);
+    mpSection.appendChild(mpRegisteredInterestsElement);
     // Append more elements as needed
 
     // Append the MP section to the main content
