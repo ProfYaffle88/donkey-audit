@@ -40,6 +40,10 @@
     color: #fff;
 }
 
+.about {
+    background-color: #fff;
+}
+
 /* Basic Page Layout */
 body {
     margin: 0;
@@ -82,10 +86,6 @@ main {
     list-style: disc;
 }
 
-/* .how-to h1, .how-to h2 {
-    font-weight: 700;
-} */
-
 /* Dropdown styles */
 .dropdown {
     position: relative;
@@ -126,6 +126,11 @@ main {
 
 /* ---- Desktop ------ */
 @media (min-width:1024px) {
+    .content.about {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
     .content .results {
         gap: 50px;
     }
