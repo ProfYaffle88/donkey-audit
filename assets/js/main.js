@@ -201,10 +201,10 @@ function displayData(mpInfo) {
 
     // Create a new section for displaying MP data
     const mpSection = document.createElement('section');
-    mpSection.className = 'content';
+    mpSection.className = 'results';
 
     // Create elements to display MP data
-    const mpNameElement = document.createElement('h2');
+    const mpNameElement = document.createElement('h1');
     mpNameElement.textContent = mpInfo.name;
     console.log(mpNameElement.textContent);
 
@@ -214,8 +214,8 @@ function displayData(mpInfo) {
     console.log(mpPortraitElement.src);
 
     // Additional data
-    const mpSynopsisElement = document.createElement('p');
-    mpSynopsisElement.textContent = mpInfo.synopsis;
+    const mpSynopsisElement = document.createElement('h3');
+    mpSynopsisElement.innerHtml = mpInfo.synopsis;
 
     // Display contact information
     const mpContactInfoElement = document.createElement('p');
@@ -234,7 +234,7 @@ function displayData(mpInfo) {
         interestDetail.textContent = interest;
         mpRegisteredInterestsElement.appendChild(interestDetail);
     });
-    
+
     // Append elements to the MP section
     mpSection.appendChild(mpNameElement);
     mpSection.appendChild(mpPortraitElement);

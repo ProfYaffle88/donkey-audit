@@ -116,7 +116,7 @@ main {
 
 /* ---- Tablets ------ */
 @media (min-width:768px) {
-    .content {
+    .results {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
         gap: 20px; /* Gap between columns */
@@ -126,7 +126,7 @@ main {
 
 /* ---- Desktop ------ */
 @media (min-width:1024px) {
-    .content {
+    .content .results {
         gap: 50px;
     }
     .title-livery img {
@@ -136,7 +136,7 @@ main {
         max-width: fit-content;
         right: 64px;
     }
-    .title-about {
+    .title-again {
         max-width: fit-content;
         right: 192px;
     }
