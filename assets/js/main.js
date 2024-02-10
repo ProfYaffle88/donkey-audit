@@ -87,6 +87,8 @@ async function fullMpDataByName(selectedMpName) {
 
     if (response.ok) {
         // Assuming we return the first MP data if multiple results are returned
+        console.log("API Response Data:", data);
+        console.log("API Response Items:", data.items);
         mpData = data.items[0].value;
         // Extract relevant data and store in a new object
         const mpInfo = {
