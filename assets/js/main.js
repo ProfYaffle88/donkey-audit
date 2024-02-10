@@ -15,7 +15,7 @@ function updateMpNameDropdown(data) {
     // Iterate over MP items
     mpItems.forEach(item => {
         // Extract the name from the item
-        const name = item.value.nameListAs;
+        const name = item.value.nameDisplayAs;
 
         // Create an option element for the dropdown
         const option = document.createElement("a");
