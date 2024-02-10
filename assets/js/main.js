@@ -87,7 +87,7 @@ async function fullMpDataByName(selectedMpName) {
 
     if (response.ok) {
         // Assuming we return the first MP data if multiple results are returned
-        mpData = data.items[0];
+        mpData = data.items[0].value;
         // Extract relevant data and store in a new object
         const mpInfo = {
             id: mpData.id,
