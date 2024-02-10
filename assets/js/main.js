@@ -58,6 +58,7 @@ async function searchMpName() {
 // Function called when the submit button is clicked
 async function handleSubmit() {
     const selectedMpName = document.getElementById("searchMpNameInput").value;
+    console.log(searchMpName);
 
     // Check if an MP name is selected
     if (selectedMpName.trim() === "") {
@@ -78,8 +79,8 @@ async function handleSubmit() {
 }
 
 // Function to fetch MP data by name
-async function fullMpDataByName(mpName) {
-    const searchString = `${API_URL}${API_SEARCH}?Name=${mpName}`;
+async function fullMpDataByName(selectedMpName) {
+    const searchString = `${API_URL}${API_SEARCH}?Name=${selectedMpName}`;
     const response = await fetch(searchString);
     let data = await response.json();
 
