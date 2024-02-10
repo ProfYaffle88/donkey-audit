@@ -11,6 +11,11 @@
     text-decoration: none; 
 }
 
+/* Hide class */
+.hide {
+    display: none;
+}
+
 /* Title */
 
 .title-livery img {
