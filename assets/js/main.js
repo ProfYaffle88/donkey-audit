@@ -22,7 +22,8 @@ function updateMpNameDropdown(data) {
         option.onclick = () => {
             // When the user clicks on an option, fill the input with the selected name
             document.getElementById("searchMpNameInput").value = name;
-            // Optionally, you can trigger a search or any other action here
+            // Hide the dropdown
+            dropdownContainer.style.display = "none";
         };
 
         // Append the option to the dropdown container
