@@ -52,14 +52,14 @@ async function searchMpName() {
         updateMpNameDropdown(data);
     } else {
         console.log(data);
-        // Handle error
     }
 }
 
 // Function called when the submit button is clicked
 async function handleSubmit() {
+    //Selected Name
     const selectedMpName = document.getElementById("searchMpNameInput").value;
-    console.log(searchMpName);
+    console.log(selectedMpName);
 
     // Check if an MP name is selected
     if (selectedMpName.trim() === "") {
