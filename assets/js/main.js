@@ -55,6 +55,122 @@ async function searchMpName() {
     }
 }
 
+// Function called when the submit button is clicked
+async function handleSubmit() {
+    const selectedMpName = document.getElementById("searchMpNameInput").value;
+
+    // Check if an MP name is selected
+    if (selectedMpName.trim() === "") {
+        alert("Please select an MP name.");
+        return;
+    }
+
+    // Fetch additional data based on the selected MP name
+    try {
+        // Fetch MP data by name
+        const mpData = await fullMpDataByName(selectedMpName);
+        // Display the MP data
+        displayData(mpData);
+    } catch (error) {
+        console.error("Error fetching MP data:", error);
+        // Handle error
+    }
+}
+
+// Function to fetch MP data by name
+async function fetchMpDataByName(mpName) {
+    const searchString = `${API_URL}${API_SEARCH}?Name=${mpName}`;
+    const response = await fetch(searchString);
+    let data = await response.json();
+
+    if (response.ok) {
+        // Assuming we return the first MP data if multiple results are returned
+        const mpData = data.items[0];
+        // Extract relevant data and store in a new object
+        const mpInfo = {
+            id: mpData.value.id,
+            name: mpData.value.nameDisplayAs,
+            portrait: mpData.value.thumbnailUrl
+            // Add more key-value pairs as needed
+        };
+
+        try {
+            // Fetch Synopsis
+            // Short text string with anchor elements 
+            const synopsisResponse = await fetch(`https://members-api.parliament.uk/api/Members/${mpInfo.id}/Synopsis`);
+            const synopsisData = await synopsisResponse.json();
+            if (synopsisResponse.ok) {
+                mpInfo.synopsis = synopsisData.value.innerHtml;
+            } else {
+                throw new Error(synopsisData.error);
+            }
+
+            // Fetch Contact Info
+            // Add contact to mpInfo as data.value (an array of two objects; offices postal address and website addresses.)
+            const contactResponse = await fetch(`https://members-api.parliament.uk/api/Members/${mpInfo.id}/Contact`);
+            const contactData = await contactResponse.json();
+            if (contactResponse.ok) {
+                mpInfo.contactInfo = contactData.value;
+            } else {
+                throw new Error(contactData.error);
+            }
+
+            // Fetch Registered Interests
+            // add regIntersts to mpInfo as data.value (a potenitally large array!)
+            const interestsResponse = await fetch(`https://members-api.parliament.uk/api/Members/${mpInfo.id}/RegisteredInterests`);
+            const interestsData = await interestsResponse.json();
+            if (interestsResponse.ok) {
+                mpInfo.registeredInterests = interestsData.value;
+            } else {
+                throw new Error(interestsData.error);
+            }
+
+            /* Here be Dragons -
+
+            Voting has an additional required parameter
+            Latest Election Result requires some data handling to display later on
+
+            // [https://members-api.parliament.uk/api/Members/4099/Voting?house=1 or 2] ... depending if in governemnt or not needs a check to work!
+            searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/Voting?house=1`;
+            const votingResponse = await fetch(searchString);
+            const votingData = await response.json();
+
+            if (response.ok) {
+                // add voting to mpInfo
+            } else {
+                throw new Error(data.error);
+            }
+
+            searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/LatestElectionResult`;
+            const elecResResponse = await fetch(searchString);
+            const elecResData = await response.json();
+
+            if (response.ok) {
+                // add lastElectionRes to mpInfo (this is an object to 7 key value pairs; electionTitle, electionDate, constituencyName, result, electorate, turnout, majority)
+                mpInfo.lastElectionRes.electionTitle = elecResData.value.electionTitle;
+                mpInfo.lastElectionRes.electionDate = elecResData.value.electionDate;
+                mpInfo.lastElectionRes.constituencyName = elecResData.value.constituencyName;
+                mpInfo.lastElectionRes.result = elecResData.value.result;
+                mpInfo.lastElectionRes.electorate = elecResData.value.electorate;
+                mpInfo.lastElectionRes.turnout = elecResData.value.turnout;
+                mpInfo.lastElectionRes.majority = elecResData.value.majority;
+            } else {
+                throw new Error(data.error);
+            }
+
+            */
+            
+        } catch (error) {
+            console.error("Error fetching additional MP data:", error);
+            // Handle error
+        }
+
+        return mpInfo;
+
+    } else {
+        throw new Error(data.error);
+    }
+}
 
 // Function to display MP data in the main content section
 function displayData(mpData) {
