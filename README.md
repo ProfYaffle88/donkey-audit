@@ -7,9 +7,9 @@ A personal project to practice the handling of APIs. Use the publically availabl
 # Inspiration
 
 - [Led by Donkeys](https://www.youtube.com/c/LedByDonkeys) are a fantastic organisation that deserve far more attention and influence than they receive. I passionately believe in greater transparency and accountability for elected officals and Governments. I feel that the imagined product would not be out of place as part of a similar instituition's website.
-- Similar sites/services exist, such as [TheyWorkForYou](https://www.theyworkforyou.com/) and the [UK Parliament site "Find Your MP" service](https://members.parliament.uk/FindYourMP), but are they difficult to use, could present the data more clearly (in my opinion) and are not well known.
+- Similar sites/services exist, such as [TheyWorkForYou](https://www.theyworkforyou.com/) and the [UK Parliament site "Find Your MP" service](https://members.parliament.uk/FindYourMP), but they are difficult to use, could present the data more palatably (in my opinion) and are not well known.
 - I would like to produce a very simple website which displays multiple items from the [UK Parliament Member API](https://members-api.parliament.uk/index.html) for a specified MP.
-- This information would be presented clearly with a short section on how to critically appraise the information.
+- This information would be presented clearly with a short section available on how to critically appraise the information.
 
 #
 # Outline
