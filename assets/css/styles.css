@@ -86,26 +86,6 @@ main {
     font-weight: 700;
 } */
 
-
-/* Media Queries */
-
-/* ---- Tablets ------ */
-@media (min-width:768px) {
-
-}
-
-/* ---- Desktop ------ */
-@media (min-width:1024px) {
-    .title-livery img {
-        max-height: 20em;
-    }
-    .title-about {
-        max-width: fit-content;
-        right: 100px;
-    }
-    
-}
-
 /* Dropdown styles */
 .dropdown {
     position: relative;
@@ -130,4 +110,27 @@ main {
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
+}
+
+/* Media Queries */
+
+/* ---- Tablets ------ */
+@media (min-width:768px) {
+
+}
+
+/* ---- Desktop ------ */
+@media (min-width:1024px) {
+    .title-livery img {
+        max-height: 20em;
+    }
+    .title-about {
+        max-width: fit-content;
+        right: 100px;
+    }
+    .title-about {
+        max-width: fit-content;
+        right: 180px;
+    }
+    
 }
