@@ -247,6 +247,33 @@ function displayData(mpInfo) {
     document.querySelector('main').appendChild(mpSection);
 }
 
+/* Postcode Search Functions */
+// Take Postcode and search ONS data.csv using PapaParse
+async function searchMpByPostcode() {
+    const postcode = document.getElementById('postcodeInput').value;
+    if (!postcode) return;
+    console.log(postcode);
+
+    const csvUrl = 'https://www.arcgis.com/sharing/rest/content/items/c57ec6ce5a6a42669b27d6fc7b007500/data';
+    Papa.parse(csvUrl, {
+        header: true,
+        complete: function(results) {
+            const data = results.data;
+            const foundRow = data.find(row => row.pcd === postcode);
+            if (foundRow) {
+                // Extract the constituency name from the matched row
+                const constituencyName = foundRow.pconnm;
+                console.log(constituencyName);
+                // Then, you can use the constituencyName to search the Parliament API
+                searchMpByConstituency(constituencyName);
+            } else {
+                console.log('Postcode not found in the CSV data.');
+            }
+        }
+    });
+}
+
+
 /* EVENT LISTENERS */
 
 // Eventvent listener to the submit button
