@@ -106,7 +106,7 @@ async function fullMpDataByName(selectedMpName) {
         console.log("API Response Items:", data.items);
         mpData = data.items[0].value;
         // Extract relevant data and store in a new object
-        const mpInfo = {
+        let mpInfo = {
             id: mpData.id,
             name: mpData.nameDisplayAs,
             portrait: mpData.thumbnailUrl
