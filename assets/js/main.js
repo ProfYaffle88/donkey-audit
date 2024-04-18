@@ -1,8 +1,8 @@
 /* UK Parliament API */
 const API_URL = "https://members-api.parliament.uk";
 const API_SEARCH = "/api/Members/Search";
-const API_MEMBERS = "/api/Members"
-let mpData;
+const API_MEMBERS = "/api/Members";
+let mpData = "";
 
 // Function to update the dropdown with MP names from HTML collection
 function updateMpNameDropdown(data) {
