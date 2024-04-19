@@ -109,7 +109,20 @@ async function fullMpDataByName(selectedMpName) {
         let mpInfo = {
             id: mpData.id,
             name: mpData.nameDisplayAs,
-            portrait: mpData.thumbnailUrl
+            portrait: mpData.thumbnailUrl,
+            synopsis: "",
+            contactInfo: [],
+            registeredInterests: [],
+            voting: [],
+            lastElectionRes: {
+                electionTitle: "",
+                electionDate: "",
+                constituencyName: "",
+                result: "",
+                electorate: "",
+                turnout: "",
+                majority: ""
+            }
             // Add more key-value pairs as needed
         };
 
@@ -160,14 +173,14 @@ async function fullMpDataByName(selectedMpName) {
             console.log(votingData);
 
             if (response.ok) {
-                // add voting to mpInfo
+                mpInfo.voting = votingData.value;
             } else {
                 throw new Error(data.error);
             }
             
             // Latest Election Result requires some data handling to display later on
 
-            searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/LatestElectionResult`;
+            searchString = `${API_URL}${API_MEMBERS}/${mpInfo.id}/LatestElectionResult`;
             const elecResResponse = await fetch(searchString);
             const elecResData = await elecResResponse.json();
             console.log("Election Result Data:");
@@ -224,7 +237,7 @@ function displayData(mpInfo) {
     console.log(mpPortraitElement.src);
 
     // Additional data
-    const mpSynopsisElement = document.createElement('h3');
+    const mpSynopsisElement = document.createElement('p');
     mpSynopsisElement.innerHtml = mpInfo.synopsis;
 
     // Display contact information
