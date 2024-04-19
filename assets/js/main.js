@@ -96,8 +96,8 @@ async function handleSubmit() {
 
 // Function to fetch MP data by name
 async function fullMpDataByName(selectedMpName) {
-    const searchString = `${API_URL}${API_SEARCH}?Name=${selectedMpName}`;
-    const response = await fetch(searchString);
+    let searchString = `${API_URL}${API_SEARCH}?Name=${selectedMpName}`;
+    let response = await fetch(searchString);
     let data = await response.json();
 
     if (response.ok) {
@@ -129,20 +129,20 @@ async function fullMpDataByName(selectedMpName) {
         try {
             // Fetch Synopsis
             // Short text string with anchor elements 
-            const synopsisResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/Synopsis`);
-            const synopsisData = await synopsisResponse.json();
+            let synopsisResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/Synopsis`);
+            let synopsisData = await synopsisResponse.json();
             console.log("Synopsis Data:")
             console.log(synopsisData);
             if (synopsisResponse.ok) {
-                mpInfo.synopsis = synopsisData.value.innerHtml;
+                mpInfo.synopsis = synopsisData.value;
             } else {
                 throw new Error(synopsisData.error);
             }
 
             // Fetch Contact Info
             // Add contact to mpInfo as data.value (an array of two objects; offices postal address and website addresses.)
-            const contactResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/Contact`);
-            const contactData = await contactResponse.json();
+            let contactResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/Contact`);
+            let contactData = await contactResponse.json();
             console.log("Contact Data:");
             console.log(contactData);
             if (contactResponse.ok) {
@@ -153,8 +153,8 @@ async function fullMpDataByName(selectedMpName) {
 
             // Fetch Registered Interests
             // add regIntersts to mpInfo as data.value (a potenitally large array!)
-            const interestsResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/RegisteredInterests`);
-            const interestsData = await interestsResponse.json();
+            let interestsResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/RegisteredInterests`);
+            let interestsData = await interestsResponse.json();
             console.log("Interests Data:");
             console.log(interestsData);
             if (interestsResponse.ok) {
@@ -166,9 +166,9 @@ async function fullMpDataByName(selectedMpName) {
             // Voting has an additional required parameter
             
             // [https://members-api.parliament.uk/api/Members/4099/Voting?house=1 or 2] ... depending if in commons or lords - as it stands, only works for commons MPs, need to add somesothing for lords!
-            searchString = `${API_URL}${API_MEMBERS}/${mpInfo.id}/Voting?house=1`;
-            const votingResponse = await fetch(searchString);
-            const votingData = await votingResponse.json();
+            let searchString = `${API_URL}${API_MEMBERS}/${mpInfo.id}/Voting?house=1`;
+            let votingResponse = await fetch(searchString);
+            let votingData = await votingResponse.json();
             console.log("Voting Data:");
             console.log(votingData);
 
@@ -181,8 +181,8 @@ async function fullMpDataByName(selectedMpName) {
             // Latest Election Result requires some data handling to display later on
 
             searchString = `${API_URL}${API_MEMBERS}/${mpInfo.id}/LatestElectionResult`;
-            const elecResResponse = await fetch(searchString);
-            const elecResData = await elecResResponse.json();
+            let elecResResponse = await fetch(searchString);
+            let elecResData = await elecResResponse.json();
             console.log("Election Result Data:");
             console.log(elecResData);
 
@@ -217,77 +217,77 @@ function displayData(mpInfo) {
     // Remove hide from search again button
     document.getElementById('search-again').classList.remove('hide');
     // Hide all current elements in the main content section
-    const contentSections = document.querySelectorAll('main .content');
+    let contentSections = document.querySelectorAll('main .content');
     contentSections.forEach(section => {
         section.style.display = 'none';
     });
 
     // Create a new section for displaying MP data
-    const mpSection = document.createElement('section');
+    let mpSection = document.createElement('section');
     mpSection.className = 'results';
 
     // Create elements to display MP data
-    const mpNameElement = document.createElement('h1');
+    let mpNameElement = document.createElement('h1');
     mpNameElement.textContent = mpInfo.name;
     console.log(mpNameElement.textContent);
 
-    const mpPortraitElement = document.createElement('img');
+    let mpPortraitElement = document.createElement('img');
     mpPortraitElement.src = mpInfo.portrait;
     mpPortraitElement.alt = "MP Portrait";
 
     // Synopsis data
-    const mpSynopsisElement = document.createElement('p');
+    let mpSynopsisElement = document.createElement('p');
     mpSynopsisElement.innerHtml = mpInfo.synopsis;
 
     // Display contact information
-    const mpContactInfoElement = document.createElement('p');
+    let mpContactInfoElement = document.createElement('p');
     mpContactInfoElement.textContent = "Contact Information:";
     mpInfo.contactInfo.forEach(contact => {
-        const contactDetail = document.createElement('p');
+        let contactDetail = document.createElement('p');
         contactDetail.textContent = `${contact.type}: ${contact.address}`;
         mpContactInfoElement.appendChild(contactDetail);
     });
 
     // Display registered interests
-    const mpRegisteredInterestsElement = document.createElement('p');
+    let mpRegisteredInterestsElement = document.createElement('p');
     mpRegisteredInterestsElement.textContent = "Registered Interests:";
     mpInfo.registeredInterests.forEach(interest => {
-        const interestDetail = document.createElement('p');
+        let interestDetail = document.createElement('p');
         interestDetail.textContent = interest;
         mpRegisteredInterestsElement.appendChild(interestDetail);
     });
 
     // Display voting data
-    const mpVotingElement = document.createElement('p');
+    let mpVotingElement = document.createElement('p');
     mpVotingElement.textContent = "Voting Data:";
     mpInfo.voting.forEach(vote => {
-        const voteDetail = document.createElement('p');
+        let voteDetail = document.createElement('p');
         voteDetail.textContent = `${vote.question}: ${vote.answer}`;
         mpVotingElement.appendChild(voteDetail);
     });
 
     // Display latest election result
-    const mpElectionResultElement = document.createElement('p');
+    let mpElectionResultElement = document.createElement('p');
     mpElectionResultElement.textContent = "Latest Election Result:";
-    const electionResultDetail = document.createElement('p');
+    let electionResultDetail = document.createElement('p');
     electionResultDetail.textContent = `Election Title: ${mpInfo.lastElectionRes.electionTitle}`;
     mpElectionResultElement.appendChild(electionResultDetail);
-    const electionDateDetail = document.createElement('p');
+    let electionDateDetail = document.createElement('p');
     electionDateDetail.textContent = `Election Date: ${mpInfo.lastElectionRes.electionDate}`;
     mpElectionResultElement.appendChild(electionDateDetail);
-    const constituencyNameDetail = document.createElement('p');
+    let constituencyNameDetail = document.createElement('p');
     constituencyNameDetail.textContent = `Constituency Name: ${mpInfo.lastElectionRes.constituencyName}`;
     mpElectionResultElement.appendChild(constituencyNameDetail);
-    const resultDetail = document.createElement('p');
+    let resultDetail = document.createElement('p');
     resultDetail.textContent = `Result: ${mpInfo.lastElectionRes.result}`;
     mpElectionResultElement.appendChild(resultDetail);
-    const electorateDetail = document.createElement('p');
+    let electorateDetail = document.createElement('p');
     electorateDetail.textContent = `Electorate: ${mpInfo.lastElectionRes.electorate}`;
     mpElectionResultElement.appendChild(electorateDetail);
-    const turnoutDetail = document.createElement('p');
+    let turnoutDetail = document.createElement('p');
     turnoutDetail.textContent = `Turnout: ${mpInfo.lastElectionRes.turnout}`;
     mpElectionResultElement.appendChild(turnoutDetail);
-    const majorityDetail = document.createElement('p');
+    let majorityDetail = document.createElement('p');
     majorityDetail.textContent = `Majority: ${mpInfo.lastElectionRes.majority}`;
     mpElectionResultElement.appendChild(majorityDetail);
 
