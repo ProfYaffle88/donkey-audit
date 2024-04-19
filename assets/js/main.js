@@ -173,7 +173,7 @@ async function fullMpDataByName(selectedMpName) {
             console.log(votingData);
 
             if (response.ok) {
-                mpInfo.voting = votingData.value;
+                mpInfo.voting = votingData;
             } else {
                 throw new Error(data.error);
             }
@@ -199,6 +199,8 @@ async function fullMpDataByName(selectedMpName) {
                 throw new Error(data.error);
             }
 
+            //voting
+
             
         } catch (error) {
             console.error("Error fetching additional MP data:", error);
@@ -214,6 +216,8 @@ async function fullMpDataByName(selectedMpName) {
 
 // Function to display MP data in the main content section
 function displayData(mpInfo) {
+    console.log("MP Info:");
+    console.log(mpInfo);
     // Remove hide from search again button
     document.getElementById('search-again').classList.remove('hide');
     // Hide all current elements in the main content section
@@ -259,7 +263,7 @@ function displayData(mpInfo) {
 
     // Display voting data
     let mpVotingElement = document.createElement('p');
-    mpVotingElement.textContent = "Voting Data:";
+    mpVotingElement.textContent = "Voting Data (last 20 votes):";
     mpInfo.voting.forEach(vote => {
         let voteDetail = document.createElement('p');
         voteDetail.textContent = `${vote.question}: ${vote.answer}`;
