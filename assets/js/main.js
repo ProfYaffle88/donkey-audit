@@ -244,56 +244,64 @@ function displayData(mpInfo) {
     mpSynopsisElement.innerHtml = mpInfo.synopsis;
 
     // Display contact information
-    let mpContactInfoElement = document.createElement('p');
-    mpContactInfoElement.textContent = "Contact Information:";
+    const mpContactInfoElement = document.createElement('div'); // Use a <div> to contain multiple contacts
+    mpContactInfoElement.innerHTML = "<h3>Contact Information:</h3>";
     mpInfo.contactInfo.forEach(contact => {
-        let contactDetail = document.createElement('p');
-        contactDetail.textContent = `${contact.type}: ${contact.address}`;
+        const contactDetail = document.createElement('p');
+        contactDetail.textContent = `${contact.type}: ${contact.line1}, ${contact.line2}, ${contact.line3}, ${contact.postcode}`;
         mpContactInfoElement.appendChild(contactDetail);
     });
 
     // Display registered interests
-    let mpRegisteredInterestsElement = document.createElement('p');
-    mpRegisteredInterestsElement.textContent = "Registered Interests:";
-    mpInfo.registeredInterests.forEach(interest => {
-        let interestDetail = document.createElement('p');
-        interestDetail.textContent = interest;
-        mpRegisteredInterestsElement.appendChild(interestDetail);
+    const mpRegisteredInterestsElement = document.createElement('div'); // Use a <div> to contain multiple interests
+    mpRegisteredInterestsElement.innerHTML = "<h3>Registered Interests:</h3>";
+    mpInfo.registeredInterests.forEach(interestCategory => {
+        const interestCategoryElement = document.createElement('div');
+        const interestCategoryHeader = document.createElement('h4');
+        interestCategoryHeader.textContent = interestCategory.name;
+        interestCategoryElement.appendChild(interestCategoryHeader);
+        interestCategory.interests.forEach(interest => {
+            const interestDetail = document.createElement('p');
+            interestDetail.textContent = interest.interest;
+            interestCategoryElement.appendChild(interestDetail);
+        });
+        mpRegisteredInterestsElement.appendChild(interestCategoryElement);
     });
 
     // Display voting data
-    let mpVotingElement = document.createElement('p');
-    mpVotingElement.textContent = "Voting Data (last 20 votes):";
-    mpInfo.voting.forEach(vote => {
-        let voteDetail = document.createElement('p');
-        voteDetail.textContent = `${vote.question}: ${vote.answer}`;
-        mpVotingElement.appendChild(voteDetail);
+    const votingData = mpInfo.voting.items;
+
+    const votingSection = document.createElement('div');
+    votingSection.innerHTML = "<h3>Voting Records:</h3>";
+
+    votingData.forEach(vote => {
+        const voteElement = document.createElement('div');
+        const voteTitle = document.createElement('p');
+        const voteDate = document.createElement('p');
+        const voteResult = document.createElement('p');
+    
+        voteTitle.textContent = `Title: ${vote.value.title}`;
+        voteDate.textContent = `Date: ${new Date(vote.value.date).toDateString()}`;
+        voteResult.textContent = `Result: In Favor - ${vote.value.numberInFavour}, Against - ${vote.value.numberAgainst}`;
+
+        voteElement.appendChild(voteTitle);
+        voteElement.appendChild(voteDate);
+        voteElement.appendChild(voteResult);
+    
+        votingSection.appendChild(voteElement);
     });
 
     // Display latest election result
-    let mpElectionResultElement = document.createElement('p');
-    mpElectionResultElement.textContent = "Latest Election Result:";
-    let electionResultDetail = document.createElement('p');
-    electionResultDetail.textContent = `Election Title: ${mpInfo.lastElectionRes.electionTitle}`;
-    mpElectionResultElement.appendChild(electionResultDetail);
-    let electionDateDetail = document.createElement('p');
-    electionDateDetail.textContent = `Election Date: ${mpInfo.lastElectionRes.electionDate}`;
-    mpElectionResultElement.appendChild(electionDateDetail);
-    let constituencyNameDetail = document.createElement('p');
-    constituencyNameDetail.textContent = `Constituency Name: ${mpInfo.lastElectionRes.constituencyName}`;
-    mpElectionResultElement.appendChild(constituencyNameDetail);
-    let resultDetail = document.createElement('p');
-    resultDetail.textContent = `Result: ${mpInfo.lastElectionRes.result}`;
-    mpElectionResultElement.appendChild(resultDetail);
-    let electorateDetail = document.createElement('p');
-    electorateDetail.textContent = `Electorate: ${mpInfo.lastElectionRes.electorate}`;
-    mpElectionResultElement.appendChild(electorateDetail);
-    let turnoutDetail = document.createElement('p');
-    turnoutDetail.textContent = `Turnout: ${mpInfo.lastElectionRes.turnout}`;
-    mpElectionResultElement.appendChild(turnoutDetail);
-    let majorityDetail = document.createElement('p');
-    majorityDetail.textContent = `Majority: ${mpInfo.lastElectionRes.majority}`;
-    mpElectionResultElement.appendChild(majorityDetail);
+    const mpElectionResultElement = document.createElement('div');
+    mpElectionResultElement.innerHTML = `<h3>Last Election Result:</h3>
+        <p>Election Title: ${mpInfo.lastElectionRes.electionTitle}</p>
+        <p>Election Date: ${mpInfo.lastElectionRes.electionDate}</p>
+        <p>Constituency Name: ${mpInfo.lastElectionRes.constituencyName}</p>
+        <p>Result: ${mpInfo.lastElectionRes.result}</p>
+        <p>Electorate: ${mpInfo.lastElectionRes.electorate}</p>
+        <p>Turnout: ${mpInfo.lastElectionRes.turnout}</p>
+        <p>Majority: ${mpInfo.lastElectionRes.majority}</p>`;
+    mpSection.appendChild(mpElectionResultElement);
 
     // Create a text node with a line break character
     const lineBreak = document.createElement('br');
@@ -309,7 +317,7 @@ function displayData(mpInfo) {
     mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpRegisteredInterestsElement);
     mpSection.appendChild(lineBreak);
-    mpSection.appendChild(mpVotingElement);
+    mpSection.appendChild(votingSection);
     mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpElectionResultElement);
 
