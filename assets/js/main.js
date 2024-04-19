@@ -303,23 +303,14 @@ function displayData(mpInfo) {
         <p>Majority: ${mpInfo.lastElectionRes.majority}</p>`;
     mpSection.appendChild(mpElectionResultElement);
 
-    // Create a text node with a line break character
-    const lineBreak = document.createElement('br');
-
-    // Append elements to the MP section
+    // Append elements to the MP section - order matters; first col, second col, first col, etc ...
     mpSection.appendChild(mpNameElement);
-    mpSection.appendChild(lineBreak);
-    mpSection.appendChild(mpPortraitElement);
-    mpSection.appendChild(lineBreak);
-    mpSection.appendChild(mpSynopsisElement);
-    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpContactInfoElement);
-    mpSection.appendChild(lineBreak);
+    mpSection.appendChild(mpPortraitElement);
     mpSection.appendChild(mpRegisteredInterestsElement);
-    mpSection.appendChild(lineBreak);
+    mpSection.appendChild(mpSynopsisElement);
     mpSection.appendChild(votingSection);
-    mpSection.appendChild(lineBreak);
-    mpSection.appendChild(mpElectionResultElement);
+    mpSection.appendChild(mpElectionResultElement);    
 
     // Append the MP section to the main content
     document.querySelector('main').appendChild(mpSection);
