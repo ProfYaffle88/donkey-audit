@@ -116,8 +116,10 @@ async function fullMpDataByName(selectedMpName) {
         try {
             // Fetch Synopsis
             // Short text string with anchor elements 
-            const synopsisResponse = await fetch(`https://members-api.parliament.uk/api/Members/${mpInfo.id}/Synopsis`);
+            const synopsisResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/Synopsis`);
             const synopsisData = await synopsisResponse.json();
+            console.log("Synopsis Data:")
+            console.log(synopsisData);
             if (synopsisResponse.ok) {
                 mpInfo.synopsis = synopsisData.value.innerHtml;
             } else {
@@ -126,8 +128,10 @@ async function fullMpDataByName(selectedMpName) {
 
             // Fetch Contact Info
             // Add contact to mpInfo as data.value (an array of two objects; offices postal address and website addresses.)
-            const contactResponse = await fetch(`https://members-api.parliament.uk/api/Members/${mpInfo.id}/Contact`);
+            const contactResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/Contact`);
             const contactData = await contactResponse.json();
+            console.log("Contact Data:");
+            console.log(contactData);
             if (contactResponse.ok) {
                 mpInfo.contactInfo = contactData.value;
             } else {
@@ -136,8 +140,10 @@ async function fullMpDataByName(selectedMpName) {
 
             // Fetch Registered Interests
             // add regIntersts to mpInfo as data.value (a potenitally large array!)
-            const interestsResponse = await fetch(`https://members-api.parliament.uk/api/Members/${mpInfo.id}/RegisteredInterests`);
+            const interestsResponse = await fetch(`${API_URL}${API_MEMBERS}/${mpInfo.id}/RegisteredInterests`);
             const interestsData = await interestsResponse.json();
+            console.log("Interests Data:");
+            console.log(interestsData);
             if (interestsResponse.ok) {
                 mpInfo.registeredInterests = interestsData.value;
             } else {
@@ -147,9 +153,11 @@ async function fullMpDataByName(selectedMpName) {
             // Voting has an additional required parameter
             
             // [https://members-api.parliament.uk/api/Members/4099/Voting?house=1 or 2] ... depending if in commons or lords - as it stands, only works for commons MPs, need to add somesothing for lords!
-            searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/Voting?house=1`;
+            searchString = `${API_URL}${API_MEMBERS}/${mpInfo.id}/Voting?house=1`;
             const votingResponse = await fetch(searchString);
-            const votingData = await response.json();
+            const votingData = await votingResponse.json();
+            console.log("Voting Data:");
+            console.log(votingData);
 
             if (response.ok) {
                 // add voting to mpInfo
@@ -161,7 +169,9 @@ async function fullMpDataByName(selectedMpName) {
 
             searchString = `https://members-api.parliament.uk/api/Members/${mpInfo.id}/LatestElectionResult`;
             const elecResResponse = await fetch(searchString);
-            const elecResData = await response.json();
+            const elecResData = await elecResResponse.json();
+            console.log("Election Result Data:");
+            console.log(elecResData);
 
             if (response.ok) {
                 // add lastElectionRes to mpInfo (this is an object to 7 key value pairs; electionTitle, electionDate, constituencyName, result, electorate, turnout, majority)
