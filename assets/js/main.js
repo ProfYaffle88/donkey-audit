@@ -231,21 +231,13 @@ function displayData(mpInfo) {
     mpNameElement.textContent = mpInfo.name;
     console.log(mpNameElement.textContent);
 
-    // Create a line break element
-    const lineBreak = document.createElement('br');
-
-    // Append the line break after the mpNameElement
-    mpNameElement.insertAdjacentElement('afterend', lineBreak);
-
     const mpPortraitElement = document.createElement('img');
     mpPortraitElement.src = mpInfo.portrait;
     mpPortraitElement.alt = "MP Portrait";
-    mpPortraitElement.insertAdjacentElement('afterend', lineBreak);
 
     // Synopsis data
     const mpSynopsisElement = document.createElement('p');
     mpSynopsisElement.innerHtml = mpInfo.synopsis;
-    mpSynopsisElement.insertAdjacentElement('afterend', lineBreak); 
 
     // Display contact information
     const mpContactInfoElement = document.createElement('p');
@@ -255,7 +247,6 @@ function displayData(mpInfo) {
         contactDetail.textContent = `${contact.type}: ${contact.address}`;
         mpContactInfoElement.appendChild(contactDetail);
     });
-    mpContactInfoElement.insertAdjacentElement('afterend', lineBreak);
 
     // Display registered interests
     const mpRegisteredInterestsElement = document.createElement('p');
@@ -265,7 +256,6 @@ function displayData(mpInfo) {
         interestDetail.textContent = interest;
         mpRegisteredInterestsElement.appendChild(interestDetail);
     });
-    mpRegisteredInterestsElement.insertAdjacentElement('afterend', lineBreak);
 
     // Display voting data
     const mpVotingElement = document.createElement('p');
@@ -275,7 +265,6 @@ function displayData(mpInfo) {
         voteDetail.textContent = `${vote.question}: ${vote.answer}`;
         mpVotingElement.appendChild(voteDetail);
     });
-    mpVotingElement.insertAdjacentElement('afterend', lineBreak);
 
     // Display latest election result
     const mpElectionResultElement = document.createElement('p');
@@ -302,16 +291,23 @@ function displayData(mpInfo) {
     majorityDetail.textContent = `Majority: ${mpInfo.lastElectionRes.majority}`;
     mpElectionResultElement.appendChild(majorityDetail);
 
-    mpElectionResultElement.insertAdjacentElement('afterend', lineBreak);
-
+    // Create a text node with a line break character
+    const lineBreakTextNode = document.createTextNode('\n');
 
     // Append elements to the MP section
     mpSection.appendChild(mpNameElement);
+    mpSection.appendChild(lineBreakTextNode);
     mpSection.appendChild(mpPortraitElement);
+    mpSection.appendChild(lineBreakTextNode);
     mpSection.appendChild(mpSynopsisElement);
+    mpSection.appendChild(lineBreakTextNode);
     mpSection.appendChild(mpContactInfoElement);
+    mpSection.appendChild(lineBreakTextNode);
     mpSection.appendChild(mpRegisteredInterestsElement);
-    // Append more elements as needed
+    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(mpVotingElement);
+    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(mpElectionResultElement);
 
     // Append the MP section to the main content
     document.querySelector('main').appendChild(mpSection);
