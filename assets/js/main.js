@@ -292,21 +292,21 @@ function displayData(mpInfo) {
     mpElectionResultElement.appendChild(majorityDetail);
 
     // Create a text node with a line break character
-    const lineBreakTextNode = document.createTextNode('\n');
+    const lineBreak = document.createElement('br');
 
     // Append elements to the MP section
     mpSection.appendChild(mpNameElement);
-    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpPortraitElement);
-    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpSynopsisElement);
-    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpContactInfoElement);
-    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpRegisteredInterestsElement);
-    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpVotingElement);
-    mpSection.appendChild(lineBreakTextNode);
+    mpSection.appendChild(lineBreak);
     mpSection.appendChild(mpElectionResultElement);
 
     // Append the MP section to the main content
