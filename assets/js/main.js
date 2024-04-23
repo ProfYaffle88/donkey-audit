@@ -294,13 +294,13 @@ function displayData(mpInfo) {
     // Display latest election result
     const mpElectionResultElement = document.createElement('div');
     mpElectionResultElement.innerHTML = `<h3>Last Election Result:</h3>
-        <p>Election Title: ${mpInfo.lastElectionRes.electionTitle}</p>
-        <p>Election Date: ${mpInfo.lastElectionRes.electionDate}</p>
-        <p>Constituency Name: ${mpInfo.lastElectionRes.constituencyName}</p>
-        <p>Result: ${mpInfo.lastElectionRes.result}</p>
-        <p>Electorate: ${mpInfo.lastElectionRes.electorate}</p>
-        <p>Turnout: ${mpInfo.lastElectionRes.turnout}</p>
-        <p>Majority: ${mpInfo.lastElectionRes.majority}</p>`;
+        <p><em>Election Title: </em>${mpInfo.lastElectionRes.electionTitle}</p>
+        <p><em>Election Date: </em>${mpInfo.lastElectionRes.electionDate}</p>
+        <p><em>Constituency Name: </em>${mpInfo.lastElectionRes.constituencyName}</p>
+        <p><em>Result: </em>${mpInfo.lastElectionRes.result}</p>
+        <p><em>Electorate: </em>${mpInfo.lastElectionRes.electorate}</p>
+        <p><em>Turnout: </em>${mpInfo.lastElectionRes.turnout}</p>
+        <p><em>Majority: </em>${mpInfo.lastElectionRes.majority}</p>`;
     mpSection.appendChild(mpElectionResultElement);
 
     // Append elements to the MP section - order matters; first col, second col, first col, etc ...
